@@ -7,34 +7,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Test</title>
+<title>Appathon</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: auto;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
 <body>
 <h2>Hello ${greeting}</h2>
 <c:if test="${not empty districts}">
-<label for="Districts">District:</label>
-<select name="District" id="Districts">
+<label>Περιφέρεια:</label>
+<select name="District" id="SelectDistrict">
+	<option value="" disabled selected>ΠΕΡΙΦΕΡΕΙΑ</option>
 	<c:forEach items="${districts}" var="district"> 
 	<option value="${district}">${district}</option>
 	</c:forEach>
 </select>
+<br>
+<label>Δήμος:</label>
+<select name="Municipality" id="SelectMunicipality">
+	<option value="" disabled selected>ΔΗΜΟΣ</option>
+</select>
 </c:if>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

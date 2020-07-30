@@ -9,6 +9,7 @@ $("#SelectDistrict").change(function(){
         	data.result.forEach( function(value, index, array){
         		txt = txt + "<option value=" + value + ">"+ value +"</option>\n"
         	});
+        	txt = txt + '<option value="total">ΣΥΝΟΛΟ</option>\n'
         	$("#SelectMunicipality").html(txt);
         },
 		error: function (e) {

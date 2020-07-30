@@ -12,6 +12,7 @@
 </head>
 <body>
 <h2>Hello ${greeting}</h2>
+<form id="search-form">
 <c:if test="${not empty districts}">
 <label>Περιφέρεια:</label>
 <select name="District" id="SelectDistrict">
@@ -25,7 +26,10 @@
 <select name="Municipality" id="SelectMunicipality">
 	<option value="" disabled selected>ΔΗΜΟΣ</option>
 </select>
+<br>
+<button type="submit" id="btn-search">Submit</button>
 </c:if>
+</form>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

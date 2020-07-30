@@ -31,4 +31,27 @@ public class services {
 		}
 		return districts;
 	}
+	
+	public List<String> getMunicipalities(String district){
+		String connectionURL = "jdbc:mysql://localhost/Appathon";
+		Connection connection = null;
+		Statement statement = null;	
+		ResultSet rs = null;
+		ArrayList<String> municipalities = new ArrayList<>();
+		String Query = "select M.name from District as D, Municipality as M"
+				+ " where D.name='" + district + "' and D.id = M.district_id order by M.name";
+		System.out.println(Query);
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager.getConnection(connectionURL, "appathon", "appathon");
+			statement = connection.createStatement();
+			rs=statement.executeQuery(Query);
+			while(rs.next()) {
+				municipalities.add(rs.getString(1));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return municipalities;
+	}
 }

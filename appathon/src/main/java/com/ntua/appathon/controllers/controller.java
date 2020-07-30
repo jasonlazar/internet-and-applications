@@ -20,11 +20,11 @@ public class controller {
 		myservices = serv;
 	}
 	
-	@RequestMapping("/districts")
-	public String database(Model model) {
+	@RequestMapping("/")
+	public String home(Model model) {
 		districts = myservices.getDistricts();
 		model.addAttribute("districts", districts);
 		model.addAttribute("greeting", "world");
-		return "database.jsp";
+		return "index.jsp";
 	}
 }

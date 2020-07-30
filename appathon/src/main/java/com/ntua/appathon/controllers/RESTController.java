@@ -30,7 +30,6 @@ public class RESTController {
 		JSONObject obj =  new JSONObject();
 		List<String> l = myservices.getMunicipalities(district);
 		obj.put("result", l);
-		System.out.println(obj);
 		return new ResponseEntity<>(obj.toString(), HttpStatus.OK);
 	}
 }

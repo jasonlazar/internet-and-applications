@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Appathon</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
 <h2>Hello ${greeting}</h2>
@@ -30,7 +31,7 @@
 <button type="submit" id="btn-search">Submit</button>
 </c:if>
 </form>
-<div id="result"></div>
+<div id="chartContainer"></div>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

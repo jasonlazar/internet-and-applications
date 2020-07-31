@@ -16,7 +16,7 @@ function searchViaAjax(){
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function (data){
-			display(data, mun);
+			createPieChart(data, mun);
 		},
 		error: function (e){
 			console.log(e);
@@ -51,10 +51,28 @@ function enableSearchButton(flag) {
 	$("#btn-search").prop("disabled", flag);
 }
 
-function display(res, mun){
-	var result = "<h4>ΨΗΦΟΦΟΡΟΙ ΔΗΜΟΥ " + mun + "</h4>\n";
-	result = result + "<table>\n<tr>\n\t<th>Άνδρες</th><th>Γυναίκες</th><th>Σύνολο</th></tr>\n";
-	result = result + "<tr>\n\t<td>"+res.men+"</td><td>"+res.women+"</td><td>"+res.total+"</td></tr>";
-	result = result + "</table>";
-	$("#result").html(result);
+function createPieChart(res, mun){
+	var chart = new CanvasJS.Chart("chartContainer", {
+		theme: "light2",
+		animationEnabled: true,
+		title: {
+			text: "ΨΗΦΟΦΟΡΟΙ ΔΗΜΟΥ " + mun
+		},
+		subtitles: [{
+			text: "Σύνολο ψηφοφόφορων: " + res.total,
+			fontSize: 16
+		}],
+		data: [{
+			type: "pie",
+			indexLabelFontSize: 18,
+			startAngle: 90,
+			radius: 80,
+			indexLabel: "{label} - {y}",
+			dataPoints: [
+				{ y: res.men, label: "Άνδρες" },
+				{ y: res.women, label: "Γυναίκες"},
+			]
+		}]
+	});
+	chart.render();
 }

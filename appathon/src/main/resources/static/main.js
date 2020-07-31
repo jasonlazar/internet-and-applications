@@ -3,9 +3,29 @@ $("#search-form").submit(function(event) {
 	enableSearchButton(false);
 	// Prevent the form from submitting via the browser.
 	event.preventDefault();
-	console.log($("#SelectDistrict").val());
-	console.log($("#SelectMunicipality").val());
+	searchViaAjax();
 });
+
+function searchViaAjax(){
+	var dis = $("#SelectDistrict").val();
+	var mun = $("#SelectMunicipality").val();
+	
+	$.ajax({
+		type: "GET",
+		url: "api/distribution/"+dis+"/"+mun,
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		success: function (data){
+			display(data, mun);
+		},
+		error: function (e){
+			console.log(e);
+		},
+		done: function(e){
+			enableSearchButton(true);
+		}
+	});
+}
 
 $("#SelectDistrict").change(function(){
 	$.ajax({
@@ -29,4 +49,12 @@ $("#SelectDistrict").change(function(){
 
 function enableSearchButton(flag) {
 	$("#btn-search").prop("disabled", flag);
+}
+
+function display(res, mun){
+	var result = "<h4>ΨΗΦΟΦΟΡΟΙ ΔΗΜΟΥ " + mun + "</h4>\n";
+	result = result + "<table>\n<tr>\n\t<th>Άνδρες</th><th>Γυναίκες</th><th>Σύνολο</th></tr>\n";
+	result = result + "<tr>\n\t<td>"+res.men+"</td><td>"+res.women+"</td><td>"+res.total+"</td></tr>";
+	result = result + "</table>";
+	$("#result").html(result);
 }

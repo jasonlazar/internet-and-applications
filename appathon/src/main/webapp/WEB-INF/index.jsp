@@ -30,6 +30,7 @@
 <button type="submit" id="btn-search">Submit</button>
 </c:if>
 </form>
+<div id="result"></div>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

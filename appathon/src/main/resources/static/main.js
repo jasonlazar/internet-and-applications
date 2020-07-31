@@ -52,11 +52,14 @@ function enableSearchButton(flag) {
 }
 
 function createPieChart(res, mun){
+	var chartTitle;
+	if (mun === "total") chartTitle = "ΨΗΦΟΦΟΡΟΙ ΠΕΡΙΦΕΡΕΙΑΣ " + $("#SelectDistrict").val();
+	else chartTitle = "ΨΗΦΟΦΟΡΟΙ ΔΗΜΟΥ " + mun
 	var chart = new CanvasJS.Chart("chartContainer", {
 		backgroundColor: "#EAE7DC",
 		animationEnabled: true,
 		title: {
-			text: "ΨΗΦΟΦΟΡΟΙ ΔΗΜΟΥ " + mun
+			text: chartTitle
 		},
 		subtitles: [{
 			text: "Σύνολο ψηφοφόφορων: " + res.total,

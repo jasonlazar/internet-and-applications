@@ -13,7 +13,7 @@
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
-<h2>Appathon website</h2>
+<h2>Αυτοδιοικητικές εκλογές 2014</h2>
 <div class="form">
 <form id="search-form">
 <c:if test="${not empty districts}">

@@ -8,13 +8,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Appathon</title>
+<link rel="stylesheet" href="/site.css" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
-<h2>Hello ${greeting}</h2>
+<h2>Appathon website</h2>
+<div class="form">
 <form id="search-form">
 <c:if test="${not empty districts}">
+<div class="form-row">
 <label>Περιφέρεια:</label>
 <select name="District" id="SelectDistrict">
 	<option value="" disabled selected>ΠΕΡΙΦΕΡΕΙΑ</option>
@@ -22,15 +25,17 @@
 	<option value="${district}">${district}</option>
 	</c:forEach>
 </select>
-<br>
+</div>
+<div class="form-row">
 <label>Δήμος:</label>
 <select name="Municipality" id="SelectMunicipality">
 	<option value="" disabled selected>ΔΗΜΟΣ</option>
 </select>
-<br>
+</div>
 <button type="submit" id="btn-search">Submit</button>
 </c:if>
 </form>
+</div>
 <div id="chartContainer"></div>
 <script type="text/javascript" src="main.js"></script>
 </body>

@@ -24,7 +24,6 @@ public class controller {
 	public String home(Model model) {
 		districts = myservices.getDistricts();
 		model.addAttribute("districts", districts);
-		model.addAttribute("greeting", "world");
 		return "index.jsp";
 	}
 }

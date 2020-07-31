@@ -53,7 +53,7 @@ function enableSearchButton(flag) {
 
 function createPieChart(res, mun){
 	var chart = new CanvasJS.Chart("chartContainer", {
-		theme: "light2",
+		backgroundColor: "#EAE7DC",
 		animationEnabled: true,
 		title: {
 			text: "ΨΗΦΟΦΟΡΟΙ ΔΗΜΟΥ " + mun

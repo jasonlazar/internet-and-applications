@@ -8,6 +8,7 @@
 ## Υλοποίηση
 Οι τεχνολογίες που χρησιμοποιήθηκαν είναι:
 - MariaDB  10.4.11
+- Apache Tomcat 9.0
 - Spring Boot 2.3.2
 - Maven 3.6.3
 - HTML
@@ -18,7 +19,7 @@
 ## Οδηγίες Εγκατάστασης
 Κατ' αρχάς για να δουλέψουν οι οδηγίες θα πρέπει τόσο ο Tomcat όσο και η βάση δεδομένων να είναι ενεργοποιημένα. Στο XAMPP αυτό γίνεται με το Start δίπλα στα πεδία Apache και MySQL.
 
-Οι οδηγίες εγκατάστασης της βάσης δεδομένων βρίσκονται στο [README του directory Database](https://github.com/jasonlazar/internet-and-applications/blob/master/Database/README.md). Αφού εισαχθεί οι εντολές που χρειάζονται για την εγκατάσταση και εκτέλεση του κώδικα είναι:
+Οι οδηγίες εγκατάστασης της βάσης δεδομένων βρίσκονται στο [README του directory Database](https://github.com/jasonlazar/internet-and-applications/blob/master/Database/README.md). Αφού γίνει αυτό, οι εντολές που χρειάζονται για την εγκατάσταση και εκτέλεση του κώδικα είναι:
 ```
 git clone https://github.com/jasonlazar/internet-and-applications.git
 

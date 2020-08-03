@@ -30,3 +30,5 @@ mvn install
 mvn spring-boot:run
 ```
 Αφού εκτελεστούν αυτές οι εντολές το site θα βρίσκεται διαθέσιμο στο [http://localhost:8080/](http://localhost:8080/).
+
+*Σημείωση: Το site έχει ελεγχθεί ότι δουλεύει στους browsers Google Chrome, Microsoft Edge και Internet Explorer.*
